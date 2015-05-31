@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %} Todo {% endblock %}
+
+{% block body %}
+
+<h1>Todo app</h1>
+<a href="{{ url_for('new') }}">new</a>
+
+<ul>{% for item in model.select() %}
+         <li>{{ item.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
